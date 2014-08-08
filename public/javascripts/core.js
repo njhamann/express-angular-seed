@@ -1,11 +1,11 @@
 'use strict';
 
 // Declare app level module which depends on filters, and services
-angular.module('myApp', [
-  'myApp.filters',
-  'myApp.services',
-  'myApp.directives',
-  'myApp.controllers',
+angular.module('App', [
+  'App.filters',
+  'App.services',
+  'App.directives',
+  'App.controllers',
   'ngRoute'
 ]).
 config(['$routeProvider', function($routeProvider) {
@@ -16,7 +16,7 @@ config(['$routeProvider', function($routeProvider) {
 
 /* Controllers */
 
-angular.module('myApp.controllers', [])
+angular.module('App.controllers', [])
   .controller('Chart', ['$scope', function($scope) {
 
   }])
@@ -29,7 +29,7 @@ angular.module('myApp.controllers', [])
 
 /* Directives */
 
-angular.module('myApp.directives', []).
+angular.module('App.directives', []).
   directive('appVersion', ['version', function(version) {
     return function(scope, elm, attrs) {
       elm.text(version);
@@ -38,7 +38,7 @@ angular.module('myApp.directives', []).
 
 /* Filters */
 
-angular.module('myApp.filters', []).
+angular.module('App.filters', []).
   filter('interpolate', ['version', function(version) {
     return function(text) {
       return String(text).replace(/\%VERSION\%/mg, version);
@@ -47,5 +47,5 @@ angular.module('myApp.filters', []).
 
 /* Services */
 
-angular.module('myApp.services', []).
+angular.module('App.services', []).
   value('version', '0.1');
